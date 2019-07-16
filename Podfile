@@ -44,8 +44,9 @@ target 'Domain' do
 end
 
 target 'Data' do
-  use_modular_headers!
-  pod 'RealmSwift', :modular_headers => false
+  pod 'ReachabilitySwift', '~> 3.0'
+#  use_modular_headers!
+#  pod 'RealmSwift', :modular_headers => false
   xcodeproj 'Data/Data.xcodeproj'
   #  target 'LocalTests' do
   #    inherit! :search_paths
