@@ -62,7 +62,11 @@ class HomeViewController: UIViewController, HomeViewProtocol {
         self.navigationController?.navigationBar.isTranslucent =  false
         self.navigationController?.navigationBar.barTintColor = UIColor.colorFromHex(APP_COLOR)
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
-        navigationController?.navigationBar.titleTextAttributes = textAttributes
+        self.navigationController?.navigationBar.titleTextAttributes = textAttributes
+        self.navigationController?.navigationBar.tintColor = .white
+
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Filter", style: .plain, target: self, action: #selector(self.showCategoriesButtonPressed))
 
     }
     
@@ -73,6 +77,11 @@ class HomeViewController: UIViewController, HomeViewProtocol {
     
     func showGenres(genres: [Genre]) {
         self.genres = genres
+    }
+    
+    @objc func showCategoriesButtonPressed(){
+        print("addButtonPressed")
+        self.presenter.goToCategories(genres: self.genres)
     }
 
 }
@@ -132,12 +141,8 @@ extension HomeViewController: UISearchBarDelegate{
         
         let lowerSearchText = searchText.lowercased()
         
-        self.filterGenres = searchText.isEmpty ? self.genres : self.genres.filter({ (genre) -> Bool in
-            return genre.name!.lowercased().hasPrefix(lowerSearchText)
-        })
-        
         self.filterMovies = searchText.isEmpty ? self.movies : self.movies.filter { movie -> Bool in
-            return movie.genre_ids!.contains(self.filterGenres.first?.id ?? 1)
+            return movie.title!.lowercased().hasPrefix(lowerSearchText)
         }
     }
 }
@@ -172,4 +177,23 @@ extension HomeViewController: MenuBarDelegate {
         }
     }
     
+}
+
+extension HomeViewController: CategoriesViewControllerDelegate{
+    
+    func categoryDidSelectItemAt(index: Int) {
+        
+        switch index {
+        case 0:
+            self.filterMovies = self.movies
+        default:
+            let genreId = self.genres[index - 1].id
+            
+            self.filterMovies = self.movies.filter { movie -> Bool in
+                return movie.genre_ids!.contains(genreId!)
+            }
+
+        }
+        
+    }
 }

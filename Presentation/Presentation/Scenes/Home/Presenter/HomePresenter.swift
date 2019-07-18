@@ -25,7 +25,6 @@ class LoginPresenter{
 
 extension LoginPresenter: HomePresenterProtocol{
     
-    
     func getGenres(){
         self.interactor.getGenres { (genres, error) in
             self.view?.showGenres(genres: Genre.transform(genreDomainEntities: genres)!)
@@ -43,5 +42,7 @@ extension LoginPresenter: HomePresenterProtocol{
         self.router.routeToDetailMovie(movie: movie)
     }
     
-    
+    func goToCategories(genres: [Genre]) {
+        self.router.routeToCategories(genres: genres)
+    }
 }

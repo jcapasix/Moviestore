@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class HomeRouter: HomeRouterProtocol {
     
@@ -20,5 +21,16 @@ class HomeRouter: HomeRouterProtocol {
         let movieDetailViewController =  MovieDetailViewController()
         movieDetailViewController.movie = movie
         self.view?.navigationController?.pushViewController(movieDetailViewController, animated: true)
+    }
+    
+    func routeToCategories(genres:[Genre]){
+        let categoriesViewController =  CategoriesViewController()
+        categoriesViewController.categories = genres
+//        categoriesViewController.definesPresentationContext = true
+//        categoriesViewController.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
+//        categoriesViewController.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        categoriesViewController.delegate = self.view
+        
+        self.view?.present(categoriesViewController, animated: true, completion: nil)
     }
 }
