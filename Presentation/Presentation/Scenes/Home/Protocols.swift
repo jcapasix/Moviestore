@@ -14,7 +14,7 @@ protocol HomeViewProtocol: class {
 }
 
 protocol HomeRouterProtocol {
-    func routeToDetailMovie()
+    func routeToDetailMovie(movie: Movie)
 }
 
 protocol HomePresenterProtocol: class {
@@ -22,7 +22,7 @@ protocol HomePresenterProtocol: class {
     //var interactor: HomeIn { get }
     func getGenres()
     func getList(list_id: Int, page: Int)
-    func goToDetailMovie()
+    func goToDetailMovie(movie: Movie)
 }
 
 protocol HomeConfiguratorProtocol {

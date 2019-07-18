@@ -11,13 +11,18 @@ import Domain
 import AlamofireImage
 
 class HomeViewController: UIViewController, HomeViewProtocol {
-    
 
     var presenter: HomePresenterProtocol!
     
     private var genres:[Genre] = []
     private var movies:[Movie] = []
-    private var filterMovies:[Movie] = []
+    
+    private var filterMovies:[Movie] = [Movie]()  {
+        didSet{
+            self.collectionView.reloadData()
+        }
+    }
+    
     private var filterGenres:[Genre] = []
     
     private let itemsPerRow: CGFloat = 3
@@ -25,6 +30,10 @@ class HomeViewController: UIViewController, HomeViewProtocol {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var categorySearchBar: UISearchBar!
+    @IBOutlet weak var menuBarView: MenuTabsView!
+    
+    var currentIndex: Int = 0
+    var tabs = ["Movies", "Popular","Top Rated","Upcoming"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,13 +51,24 @@ class HomeViewController: UIViewController, HomeViewProtocol {
         self.collectionView.register(UINib.init(nibName: "MovieCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MovieCollectionViewCell")
         self.categorySearchBar.delegate = self
         
-        self.title = "Movies"
+        
+        menuBarView.dataArray = tabs
+        menuBarView.isSizeToFitCellsNeeded = true
+        menuBarView.collView.backgroundColor = UIColor.init(white: 0.97, alpha: 0.97)
+        menuBarView.menuDelegate = self
+        menuBarView.collView.selectItem(at: IndexPath.init(item: 0, section: 0), animated: true, scrollPosition: .centeredVertically)
+        
+        self.title = TITLE_HOME
+        self.navigationController?.navigationBar.isTranslucent =  false
+        self.navigationController?.navigationBar.barTintColor = UIColor.colorFromHex(APP_COLOR)
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
+
     }
     
     func showMovies(movies: [Movie]) {
         self.movies = movies
         self.filterMovies = movies
-        self.collectionView.reloadData()
     }
     
     func showGenres(genres: [Genre]) {
@@ -61,7 +81,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        self.presenter.goToDetailMovie(movie: self.filterMovies[indexPath.row])
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -70,16 +90,17 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieCollectionViewCell", for: indexPath as IndexPath) as! MovieCollectionViewCell
         
-        if let url = URL(string: "\(IMGE_LINK)\(self.filterMovies[indexPath.row].poster_path ?? NO_TEXT)"){
+        if let url = URL(string: "\(IMAGE_LINK)\(self.filterMovies[indexPath.row].poster_path ?? NO_TEXT)"){
             cell.posterImageView.af_setImage(withURL: url)
         }
         return cell
     }
+
 }
 
-// MARK: - Collection View Flow Layout Delegate
+// MARK: - UICollectionViewDelegateFlowLayout
 extension HomeViewController : UICollectionViewDelegateFlowLayout {
-    //1
+
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -103,13 +124,9 @@ extension HomeViewController : UICollectionViewDelegateFlowLayout {
     }
 }
 
+// MARK: - UISearchBarDelegate
+
 extension HomeViewController: UISearchBarDelegate{
-    
-    func printFilterGenres(){
-        for genre in filterGenres{
-            print("Genre: \(genre.name!)")
-        }
-    }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
@@ -122,9 +139,37 @@ extension HomeViewController: UISearchBarDelegate{
         self.filterMovies = searchText.isEmpty ? self.movies : self.movies.filter { movie -> Bool in
             return movie.genre_ids!.contains(self.filterGenres.first?.id ?? 1)
         }
-        
-        self.printFilterGenres()
-        self.collectionView.reloadData()
-        
     }
+}
+
+// MARK: - MenuBarDelegate
+
+extension HomeViewController: MenuBarDelegate {
+    
+    func menuBarDidSelectItemAt(menu: MenuTabsView, index: Int) {
+        
+        self.categorySearchBar.text = nil
+        
+        switch index {
+        case 1:
+            self.filterMovies = self.movies.sorted(by: { CGFloat($0.popularity!) > CGFloat($1.popularity!)})
+            break
+        case 2:
+            self.filterMovies = self.movies.sorted(by: { CGFloat($0.vote_count!) > CGFloat($1.vote_count!)})
+            break
+        case 3:
+            self.filterMovies = self.movies.filter({ (movie) -> Bool in
+                let currentDate = Date()
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd"
+                let date = dateFormatter.date(from: movie.release_date!)
+                return currentDate < date!
+            })
+            break
+        default:
+            self.filterMovies = self.movies
+            break
+        }
+    }
+    
 }

@@ -16,7 +16,9 @@ class HomeRouter: HomeRouterProtocol {
         self.view = view as? HomeViewController
     }
     
-    func routeToDetailMovie(){
-        
+    func routeToDetailMovie(movie: Movie){
+        let movieDetailViewController =  MovieDetailViewController()
+        movieDetailViewController.movie = movie
+        self.view?.navigationController?.pushViewController(movieDetailViewController, animated: true)
     }
 }

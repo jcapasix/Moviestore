@@ -30,6 +30,9 @@
 		50A3D18722E0CC9B00F98CF2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A3D18622E0CC9B00F98CF2 /* Utils.swift */; };
 		50A3D18922E0CCA000F98CF2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A3D18822E0CCA000F98CF2 /* Constants.swift */; };
 		50A3D18F22E0D5F600F98CF2 /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A3D18E22E0D5F600F98CF2 /* Genre.swift */; };
+		50A3D19322E0EE0300F98CF2 /* MenuTabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A3D19222E0EE0300F98CF2 /* MenuTabsView.swift */; };
+		50A3D19522E0EE2900F98CF2 /* BasicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A3D19422E0EE2900F98CF2 /* BasicCell.swift */; };
+		50A3D19822E0EE5900F98CF2 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A3D19722E0EE5900F98CF2 /* Extension.swift */; };
 		AB07D3F8D64863962C7C09C5 /* libPods-Presentation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AC87D2770EC128FF4BC3FAD /* libPods-Presentation.a */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +96,9 @@
 		50A3D18622E0CC9B00F98CF2 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		50A3D18822E0CCA000F98CF2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		50A3D18E22E0D5F600F98CF2 /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
+		50A3D19222E0EE0300F98CF2 /* MenuTabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTabsView.swift; sourceTree = "<group>"; };
+		50A3D19422E0EE2900F98CF2 /* BasicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicCell.swift; sourceTree = "<group>"; };
+		50A3D19722E0EE5900F98CF2 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		8AC87D2770EC128FF4BC3FAD /* libPods-Presentation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Presentation.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4AD5B2C7DA80AC2004DC434 /* Pods-Presentation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Presentation.release.xcconfig"; path = "Target Support Files/Pods-Presentation/Pods-Presentation.release.xcconfig"; sourceTree = "<group>"; };
 		EAEB457396DC3B61E1E49C99 /* Pods-Presentation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Presentation.debug.xcconfig"; path = "Target Support Files/Pods-Presentation/Pods-Presentation.debug.xcconfig"; sourceTree = "<group>"; };
@@ -240,6 +246,8 @@
 		50A3D14322DF7B1900F98CF2 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				50A3D19422E0EE2900F98CF2 /* BasicCell.swift */,
+				50A3D19222E0EE0300F98CF2 /* MenuTabsView.swift */,
 				50A3D17C22DFD7F300F98CF2 /* MovieCollectionViewCell.swift */,
 				50A3D17D22DFD7F300F98CF2 /* MovieCollectionViewCell.xib */,
 			);
@@ -269,6 +277,7 @@
 			children = (
 				50A3D18622E0CC9B00F98CF2 /* Utils.swift */,
 				50A3D18822E0CCA000F98CF2 /* Constants.swift */,
+				50A3D19722E0EE5900F98CF2 /* Extension.swift */,
 			);
 			path = Resourses;
 			sourceTree = "<group>";
@@ -451,8 +460,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50A3D19822E0EE5900F98CF2 /* Extension.swift in Sources */,
 				50A3D17B22DFB7CF00F98CF2 /* Movie.swift in Sources */,
 				50A3D18922E0CCA000F98CF2 /* Constants.swift in Sources */,
+				50A3D19322E0EE0300F98CF2 /* MenuTabsView.swift in Sources */,
 				50A3D13E22DECBC300F98CF2 /* HomeConfigurator.swift in Sources */,
 				50A3D18F22E0D5F600F98CF2 /* Genre.swift in Sources */,
 				50A3D14022DECBD200F98CF2 /* HomeRouter.swift in Sources */,
@@ -462,6 +473,7 @@
 				50A3D14222DECBDD00F98CF2 /* HomePresenter.swift in Sources */,
 				50A3D13B22DECBB300F98CF2 /* HomeViewController.swift in Sources */,
 				50A3D18322E0C4EF00F98CF2 /* MovieDetailViewController.swift in Sources */,
+				50A3D19522E0EE2900F98CF2 /* BasicCell.swift in Sources */,
 				50A3D17E22DFD7F300F98CF2 /* MovieCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

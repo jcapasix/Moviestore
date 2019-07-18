@@ -39,8 +39,9 @@ extension LoginPresenter: HomePresenterProtocol{
         }
     }
     
-    func goToDetailMovie() {
-        
+    func goToDetailMovie(movie: Movie) {
+        self.router.routeToDetailMovie(movie: movie)
     }
+    
     
 }
