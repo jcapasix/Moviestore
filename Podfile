@@ -6,9 +6,11 @@ workspace 'Moviestore'
 def shared_pods
     pod 'ObjectMapper', '~> 3.0'
     pod 'AlamofireObjectMapper', '~> 5.0'
-    pod 'Alamofire-Synchronous', '~> 4.0'
+    pod 'AlamofireImage', '~> 3.5'
+#    pod 'Alamofire-Synchronous', '~> 4.0'
     pod 'Alamofire', '~> 4.4'
     pod 'ReachabilitySwift', '~> 3.0'
+    pod 'Mocker', '~> 1.0.0'
 end
 
 target 'Moviestore' do
@@ -36,7 +38,8 @@ target 'Presentation' do
 end
 
 target 'Domain' do
-  pod 'ReachabilitySwift', '~> 3.0'
+#  pod 'ReachabilitySwift', '~> 3.0'
+shared_pods
   xcodeproj 'Domain/Domain.xcodeproj'
 #  target 'LocalTests' do
 #    inherit! :search_paths
@@ -44,9 +47,10 @@ target 'Domain' do
 end
 
 target 'Data' do
-  pod 'ReachabilitySwift', '~> 3.0'
+  shared_pods
 #  use_modular_headers!
 #  pod 'RealmSwift', :modular_headers => false
+
   xcodeproj 'Data/Data.xcodeproj'
   #  target 'LocalTests' do
   #    inherit! :search_paths

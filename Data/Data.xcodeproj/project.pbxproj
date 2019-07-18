@@ -10,6 +10,18 @@
 		50A3D0DE22DE380500F98CF2 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A3D0D422DE380500F98CF2 /* Data.framework */; };
 		50A3D0E322DE380500F98CF2 /* DataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A3D0E222DE380500F98CF2 /* DataTests.swift */; };
 		50A3D0E522DE380500F98CF2 /* Data.h in Headers */ = {isa = PBXBuildFile; fileRef = 50A3D0D722DE380500F98CF2 /* Data.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		50A3D14622DF7C2800F98CF2 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A3D14522DF7C2800F98CF2 /* Configuration.swift */; };
+		50A3D14822DF7D5000F98CF2 /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A3D14722DF7D5000F98CF2 /* Routes.swift */; };
+		50A3D14A22DF7E5000F98CF2 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A3D14922DF7E5000F98CF2 /* Connection.swift */; };
+		50A3D14E22DF7EF300F98CF2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A3D14D22DF7EF300F98CF2 /* Utils.swift */; };
+		50A3D15122DF7F2000F98CF2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A3D15022DF7F2000F98CF2 /* Constants.swift */; };
+		50A3D15322DF7F7A00F98CF2 /* MovieDataEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A3D15222DF7F7A00F98CF2 /* MovieDataEntity.swift */; };
+		50A3D15E22DF7FEB00F98CF2 /* MoviesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A3D15D22DF7FEB00F98CF2 /* MoviesResponse.swift */; };
+		50A3D17022DFADE500F98CF2 /* HomeLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A3D16F22DFADE500F98CF2 /* HomeLocalRepository.swift */; };
+		50A3D17222DFADF100F98CF2 /* HomeRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A3D17122DFADF100F98CF2 /* HomeRemoteRepository.swift */; };
+		50A3D17422DFAE0300F98CF2 /* HomeRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A3D17322DFAE0200F98CF2 /* HomeRepositoryProtocol.swift */; };
+		50A3D18B22E0D3D700F98CF2 /* GenreDataEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A3D18A22E0D3D700F98CF2 /* GenreDataEntity.swift */; };
+		50A3D18D22E0D46100F98CF2 /* GenreResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A3D18C22E0D46100F98CF2 /* GenreResponse.swift */; };
 		91FEF5685CA1B3B9459C922C /* libPods-Data.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 610E39E180AE60F2DEE14E83 /* libPods-Data.a */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +43,18 @@
 		50A3D0DD22DE380500F98CF2 /* DataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		50A3D0E222DE380500F98CF2 /* DataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTests.swift; sourceTree = "<group>"; };
 		50A3D0E422DE380500F98CF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50A3D14522DF7C2800F98CF2 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		50A3D14722DF7D5000F98CF2 /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
+		50A3D14922DF7E5000F98CF2 /* Connection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
+		50A3D14D22DF7EF300F98CF2 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		50A3D15022DF7F2000F98CF2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		50A3D15222DF7F7A00F98CF2 /* MovieDataEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDataEntity.swift; sourceTree = "<group>"; };
+		50A3D15D22DF7FEB00F98CF2 /* MoviesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesResponse.swift; sourceTree = "<group>"; };
+		50A3D16F22DFADE500F98CF2 /* HomeLocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeLocalRepository.swift; path = Data/Repository/HomeLocalRepository.swift; sourceTree = SOURCE_ROOT; };
+		50A3D17122DFADF100F98CF2 /* HomeRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeRemoteRepository.swift; path = Data/Repository/HomeRemoteRepository.swift; sourceTree = SOURCE_ROOT; };
+		50A3D17322DFAE0200F98CF2 /* HomeRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeRepositoryProtocol.swift; path = Data/Repository/HomeRepositoryProtocol.swift; sourceTree = SOURCE_ROOT; };
+		50A3D18A22E0D3D700F98CF2 /* GenreDataEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreDataEntity.swift; sourceTree = "<group>"; };
+		50A3D18C22E0D46100F98CF2 /* GenreResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreResponse.swift; sourceTree = "<group>"; };
 		610E39E180AE60F2DEE14E83 /* libPods-Data.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Data.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AD1809D2A21748FC1A43350 /* Pods-Data.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Data.release.xcconfig"; path = "Target Support Files/Pods-Data/Pods-Data.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,6 +112,11 @@
 		50A3D0D622DE380500F98CF2 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				50A3D16822DFACF000F98CF2 /* Repository */,
+				50A3D14C22DF7ED500F98CF2 /* Resourses */,
+				50A3D14B22DF7ECD00F98CF2 /* Entities */,
+				50A3D15C22DF7FC300F98CF2 /* Responses */,
+				50A3D14422DF7C1300F98CF2 /* Network */,
 				50A3D0D722DE380500F98CF2 /* Data.h */,
 				50A3D0D822DE380500F98CF2 /* Info.plist */,
 			);
@@ -101,6 +130,61 @@
 				50A3D0E422DE380500F98CF2 /* Info.plist */,
 			);
 			path = DataTests;
+			sourceTree = "<group>";
+		};
+		50A3D14422DF7C1300F98CF2 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				50A3D14522DF7C2800F98CF2 /* Configuration.swift */,
+				50A3D14722DF7D5000F98CF2 /* Routes.swift */,
+				50A3D14922DF7E5000F98CF2 /* Connection.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		50A3D14B22DF7ECD00F98CF2 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				50A3D15222DF7F7A00F98CF2 /* MovieDataEntity.swift */,
+				50A3D18A22E0D3D700F98CF2 /* GenreDataEntity.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		50A3D14C22DF7ED500F98CF2 /* Resourses */ = {
+			isa = PBXGroup;
+			children = (
+				50A3D14D22DF7EF300F98CF2 /* Utils.swift */,
+				50A3D15022DF7F2000F98CF2 /* Constants.swift */,
+			);
+			path = Resourses;
+			sourceTree = "<group>";
+		};
+		50A3D15C22DF7FC300F98CF2 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				50A3D15D22DF7FEB00F98CF2 /* MoviesResponse.swift */,
+				50A3D18C22E0D46100F98CF2 /* GenreResponse.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		50A3D16822DFACF000F98CF2 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				50A3D17522DFAE0B00F98CF2 /* Home */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		50A3D17522DFAE0B00F98CF2 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				50A3D17322DFAE0200F98CF2 /* HomeRepositoryProtocol.swift */,
+				50A3D17122DFADF100F98CF2 /* HomeRemoteRepository.swift */,
+				50A3D16F22DFADE500F98CF2 /* HomeLocalRepository.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		BD1B0AFA20275E6AAE557DBC /* Frameworks */ = {
@@ -174,6 +258,7 @@
 				TargetAttributes = {
 					50A3D0D322DE380500F98CF2 = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
 					};
 					50A3D0DC22DE380500F98CF2 = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -245,6 +330,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50A3D15122DF7F2000F98CF2 /* Constants.swift in Sources */,
+				50A3D14622DF7C2800F98CF2 /* Configuration.swift in Sources */,
+				50A3D18D22E0D46100F98CF2 /* GenreResponse.swift in Sources */,
+				50A3D14A22DF7E5000F98CF2 /* Connection.swift in Sources */,
+				50A3D15E22DF7FEB00F98CF2 /* MoviesResponse.swift in Sources */,
+				50A3D17022DFADE500F98CF2 /* HomeLocalRepository.swift in Sources */,
+				50A3D17222DFADF100F98CF2 /* HomeRemoteRepository.swift in Sources */,
+				50A3D18B22E0D3D700F98CF2 /* GenreDataEntity.swift in Sources */,
+				50A3D14822DF7D5000F98CF2 /* Routes.swift in Sources */,
+				50A3D14E22DF7EF300F98CF2 /* Utils.swift in Sources */,
+				50A3D17422DFAE0300F98CF2 /* HomeRepositoryProtocol.swift in Sources */,
+				50A3D15322DF7F7A00F98CF2 /* MovieDataEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +490,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 25686A4187C636BB3D445111 /* Pods-Data.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -410,6 +508,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jcapasix.Data;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -419,6 +518,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7AD1809D2A21748FC1A43350 /* Pods-Data.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -444,6 +544,7 @@
 		50A3D0EC22DE380500F98CF2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 778N4TU227;
 				INFOPLIST_FILE = DataTests/Info.plist;
@@ -462,6 +563,7 @@
 		50A3D0ED22DE380500F98CF2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 778N4TU227;
 				INFOPLIST_FILE = DataTests/Info.plist;

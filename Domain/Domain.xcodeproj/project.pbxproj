@@ -11,6 +11,12 @@
 		50A3D0BF22DE377400F98CF2 /* DomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A3D0BE22DE377400F98CF2 /* DomainTests.swift */; };
 		50A3D0C122DE377400F98CF2 /* Domain.h in Headers */ = {isa = PBXBuildFile; fileRef = 50A3D0B322DE377400F98CF2 /* Domain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		50A3D12F22DE8FAA00F98CF2 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A3D12E22DE8FAA00F98CF2 /* Data.framework */; };
+		50A3D15922DF7FB300F98CF2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A3D15822DF7FB300F98CF2 /* Utils.swift */; };
+		50A3D15B22DF7FBA00F98CF2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A3D15A22DF7FBA00F98CF2 /* Constants.swift */; };
+		50A3D16322DF8F6900F98CF2 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A3D16222DF8F6900F98CF2 /* HomeInteractor.swift */; };
+		50A3D16722DF8FB100F98CF2 /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A3D16622DF8FB100F98CF2 /* Interactor.swift */; };
+		50A3D17722DFB42300F98CF2 /* MovieDomainEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A3D17622DFB42300F98CF2 /* MovieDomainEntity.swift */; };
+		50A3D19122E0D63C00F98CF2 /* GenreDomainEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A3D19022E0D63B00F98CF2 /* GenreDomainEntity.swift */; };
 		EB644E6AB087790262D5E58D /* libPods-Domain.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AE7400BAC5D11CE11DD6A28 /* libPods-Domain.a */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +40,12 @@
 		50A3D0BE22DE377400F98CF2 /* DomainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainTests.swift; sourceTree = "<group>"; };
 		50A3D0C022DE377400F98CF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50A3D12E22DE8FAA00F98CF2 /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		50A3D15822DF7FB300F98CF2 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		50A3D15A22DF7FBA00F98CF2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		50A3D16222DF8F6900F98CF2 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		50A3D16622DF8FB100F98CF2 /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
+		50A3D17622DFB42300F98CF2 /* MovieDomainEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDomainEntity.swift; sourceTree = "<group>"; };
+		50A3D19022E0D63B00F98CF2 /* GenreDomainEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreDomainEntity.swift; sourceTree = "<group>"; };
 		C69EA3E01E60D5C24E03C95F /* Pods-Domain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Domain.debug.xcconfig"; path = "Target Support Files/Pods-Domain/Pods-Domain.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,6 +93,9 @@
 		50A3D0B222DE377400F98CF2 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				50A3D16122DF8F5B00F98CF2 /* Interactor */,
+				50A3D15522DF7F9300F98CF2 /* Entities */,
+				50A3D15422DF7F8700F98CF2 /* Resourses */,
 				50A3D0B322DE377400F98CF2 /* Domain.h */,
 				50A3D0B422DE377400F98CF2 /* Info.plist */,
 			);
@@ -94,6 +109,33 @@
 				50A3D0C022DE377400F98CF2 /* Info.plist */,
 			);
 			path = DomainTests;
+			sourceTree = "<group>";
+		};
+		50A3D15422DF7F8700F98CF2 /* Resourses */ = {
+			isa = PBXGroup;
+			children = (
+				50A3D15822DF7FB300F98CF2 /* Utils.swift */,
+				50A3D15A22DF7FBA00F98CF2 /* Constants.swift */,
+			);
+			path = Resourses;
+			sourceTree = "<group>";
+		};
+		50A3D15522DF7F9300F98CF2 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				50A3D17622DFB42300F98CF2 /* MovieDomainEntity.swift */,
+				50A3D19022E0D63B00F98CF2 /* GenreDomainEntity.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		50A3D16122DF8F5B00F98CF2 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				50A3D16622DF8FB100F98CF2 /* Interactor.swift */,
+				50A3D16222DF8F6900F98CF2 /* HomeInteractor.swift */,
+			);
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 		537E0AD8F8CB089B3C8B4D76 /* Frameworks */ = {
@@ -178,6 +220,7 @@
 				TargetAttributes = {
 					50A3D0AF22DE377400F98CF2 = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
 					};
 					50A3D0B822DE377400F98CF2 = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -249,6 +292,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50A3D15922DF7FB300F98CF2 /* Utils.swift in Sources */,
+				50A3D16722DF8FB100F98CF2 /* Interactor.swift in Sources */,
+				50A3D17722DFB42300F98CF2 /* MovieDomainEntity.swift in Sources */,
+				50A3D15B22DF7FBA00F98CF2 /* Constants.swift in Sources */,
+				50A3D19122E0D63C00F98CF2 /* GenreDomainEntity.swift in Sources */,
+				50A3D16322DF8F6900F98CF2 /* HomeInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +446,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C69EA3E01E60D5C24E03C95F /* Pods-Domain.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -414,6 +464,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jcapasix.Domain;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -423,6 +474,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 461C4CAD7C3950542A592C7E /* Pods-Domain.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -448,6 +500,7 @@
 		50A3D0C822DE377400F98CF2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 778N4TU227;
 				INFOPLIST_FILE = DomainTests/Info.plist;
@@ -466,6 +519,7 @@
 		50A3D0C922DE377400F98CF2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 778N4TU227;
 				INFOPLIST_FILE = DomainTests/Info.plist;
