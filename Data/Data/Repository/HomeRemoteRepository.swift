@@ -18,11 +18,11 @@ public class HomeRemoteRepository: HomeRepositoryProtocol {
     public func getList(list_id: Int, page: Int, completion: @escaping ([MovieDataEntity]?, NSError?) -> Void) {
         
         var moviesResponse: MoviesResponse?
-        var error: NSError?
+//        var error: NSError?
         
 //        let parameters : [ String : Any] = [
 //            "api_key" : AppEnvironment.configuration.apiKey,
-//            "page" : page
+//            "page" : "2"
 //        ]
         
         let headers = [
@@ -30,13 +30,14 @@ public class HomeRemoteRepository: HomeRepositoryProtocol {
             "authorization": "Bearer \(AppEnvironment.configuration.accessToken)"
         ]
         
-        Connection.sharedInstance.request(Routes.getList.getURL(), method: .get, parameters: nil, encoding: JSONEncoding.default, headers:headers).responseObject { (response: DataResponse<MoviesResponse>) in
+        Connection.sharedInstance.request("\(Routes.getList.getURL())\(page)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers:headers).responseObject { (response: DataResponse<MoviesResponse>) in
             
             switch response.result {
                 
             case .success(_):
                 moviesResponse = response.result.value
-                completion(moviesResponse?.results, error)
+                CoreDateManager.shared.saveMovies(movies: moviesResponse!.results!)
+                completion(moviesResponse?.results, nil)
                 print("success")
                 
             case .failure(let _error):
@@ -50,7 +51,7 @@ public class HomeRemoteRepository: HomeRepositoryProtocol {
     public func getGenres(completion: @escaping ([GenreDataEntity]?, NSError?) -> Void) {
         
         var genresResponse: GenreResponse?
-        var error: NSError?
+//        var error: NSError?
         
         let headers = [
             "content-type": "application/json;charset=utf-8",
@@ -64,7 +65,9 @@ public class HomeRemoteRepository: HomeRepositoryProtocol {
 
             case .success(_):
                 genresResponse = response.result.value
-                completion(genresResponse?.genres, error)
+                CoreDateManager.shared.saveGenres(genres: genresResponse!.genres!)
+                completion(genresResponse?.genres, nil)
+                
                 print("success")
                 
             case .failure(let _error):

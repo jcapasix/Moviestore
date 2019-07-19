@@ -8,8 +8,9 @@ def shared_pods
     pod 'AlamofireObjectMapper', '~> 5.0'
     pod 'AlamofireImage', '~> 3.5'
 #    pod 'Alamofire-Synchronous', '~> 4.0'
+    pod 'SVProgressHUD'
     pod 'Alamofire', '~> 4.4'
-    pod 'ReachabilitySwift', '~> 3.0'
+    pod 'ReachabilitySwift'
     pod 'Mocker', '~> 1.0.0'
 end
 
@@ -20,7 +21,7 @@ target 'Moviestore' do
 end
 
 target 'Presentation' do
-    
+    use_frameworks!
     shared_pods
     
 #    target 'PresentationTests' do
@@ -47,10 +48,10 @@ shared_pods
 end
 
 target 'Data' do
-  shared_pods
 #  use_modular_headers!
 #  pod 'RealmSwift', :modular_headers => false
 
+  shared_pods
   xcodeproj 'Data/Data.xcodeproj'
   #  target 'LocalTests' do
   #    inherit! :search_paths

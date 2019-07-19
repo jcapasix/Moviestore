@@ -9,6 +9,7 @@
 import UIKit
 import Domain
 import AlamofireImage
+import SVProgressHUD
 
 class HomeViewController: UIViewController, HomeViewProtocol {
 
@@ -16,6 +17,8 @@ class HomeViewController: UIViewController, HomeViewProtocol {
     
     private var genres:[Genre] = []
     private var movies:[Movie] = []
+    
+    var currentPage = 1
     
     private var filterMovies:[Movie] = [Movie]()  {
         didSet{
@@ -67,12 +70,11 @@ class HomeViewController: UIViewController, HomeViewProtocol {
 
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Filter", style: .plain, target: self, action: #selector(self.showCategoriesButtonPressed))
-
     }
     
     func showMovies(movies: [Movie]) {
-        self.movies = movies
-        self.filterMovies = movies
+        self.movies += movies
+        self.filterMovies += movies
     }
     
     func showGenres(genres: [Genre]) {
@@ -131,6 +133,13 @@ extension HomeViewController : UICollectionViewDelegateFlowLayout {
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return sectionInsets.left
     }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+//        if (indexPath.row == self.genres.count - 1) {
+//            self.presenter.getList(list_id: 1, page: currentPage + 1)
+//        }
+    }
+
 }
 
 // MARK: - UISearchBarDelegate

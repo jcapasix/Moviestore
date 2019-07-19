@@ -22,6 +22,8 @@
 		50A3D17422DFAE0300F98CF2 /* HomeRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A3D17322DFAE0200F98CF2 /* HomeRepositoryProtocol.swift */; };
 		50A3D18B22E0D3D700F98CF2 /* GenreDataEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A3D18A22E0D3D700F98CF2 /* GenreDataEntity.swift */; };
 		50A3D18D22E0D46100F98CF2 /* GenreResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A3D18C22E0D46100F98CF2 /* GenreResponse.swift */; };
+		50A7F52722E226A200089954 /* Data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 50A7F52522E226A200089954 /* Data.xcdatamodeld */; };
+		50A7F52922E228BF00089954 /* CoreDateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A7F52822E228BF00089954 /* CoreDateManager.swift */; };
 		91FEF5685CA1B3B9459C922C /* libPods-Data.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 610E39E180AE60F2DEE14E83 /* libPods-Data.a */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +57,8 @@
 		50A3D17322DFAE0200F98CF2 /* HomeRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeRepositoryProtocol.swift; path = Data/Repository/HomeRepositoryProtocol.swift; sourceTree = SOURCE_ROOT; };
 		50A3D18A22E0D3D700F98CF2 /* GenreDataEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreDataEntity.swift; sourceTree = "<group>"; };
 		50A3D18C22E0D46100F98CF2 /* GenreResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreResponse.swift; sourceTree = "<group>"; };
+		50A7F52622E226A200089954 /* Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Data.xcdatamodel; sourceTree = "<group>"; };
+		50A7F52822E228BF00089954 /* CoreDateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDateManager.swift; sourceTree = "<group>"; };
 		610E39E180AE60F2DEE14E83 /* libPods-Data.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Data.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AD1809D2A21748FC1A43350 /* Pods-Data.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Data.release.xcconfig"; path = "Target Support Files/Pods-Data/Pods-Data.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,6 +123,8 @@
 				50A3D14422DF7C1300F98CF2 /* Network */,
 				50A3D0D722DE380500F98CF2 /* Data.h */,
 				50A3D0D822DE380500F98CF2 /* Info.plist */,
+				50A7F52522E226A200089954 /* Data.xcdatamodeld */,
+				50A7F52822E228BF00089954 /* CoreDateManager.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -218,6 +224,7 @@
 				50A3D0D022DE380500F98CF2 /* Sources */,
 				50A3D0D122DE380500F98CF2 /* Frameworks */,
 				50A3D0D222DE380500F98CF2 /* Resources */,
+				530A2A3D950B379F44710E99 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -323,6 +330,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		530A2A3D950B379F44710E99 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Data/Pods-Data-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Data/Pods-Data-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Data/Pods-Data-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -334,12 +358,14 @@
 				50A3D14622DF7C2800F98CF2 /* Configuration.swift in Sources */,
 				50A3D18D22E0D46100F98CF2 /* GenreResponse.swift in Sources */,
 				50A3D14A22DF7E5000F98CF2 /* Connection.swift in Sources */,
+				50A7F52922E228BF00089954 /* CoreDateManager.swift in Sources */,
 				50A3D15E22DF7FEB00F98CF2 /* MoviesResponse.swift in Sources */,
 				50A3D17022DFADE500F98CF2 /* HomeLocalRepository.swift in Sources */,
 				50A3D17222DFADF100F98CF2 /* HomeRemoteRepository.swift in Sources */,
 				50A3D18B22E0D3D700F98CF2 /* GenreDataEntity.swift in Sources */,
 				50A3D14822DF7D5000F98CF2 /* Routes.swift in Sources */,
 				50A3D14E22DF7EF300F98CF2 /* Utils.swift in Sources */,
+				50A7F52722E226A200089954 /* Data.xcdatamodeld in Sources */,
 				50A3D17422DFAE0300F98CF2 /* HomeRepositoryProtocol.swift in Sources */,
 				50A3D15322DF7F7A00F98CF2 /* MovieDataEntity.swift in Sources */,
 			);
@@ -610,6 +636,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		50A7F52522E226A200089954 /* Data.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				50A7F52622E226A200089954 /* Data.xcdatamodel */,
+			);
+			currentVersion = 50A7F52622E226A200089954 /* Data.xcdatamodel */;
+			path = Data.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 50A3D0CB22DE380500F98CF2 /* Project object */;
 }

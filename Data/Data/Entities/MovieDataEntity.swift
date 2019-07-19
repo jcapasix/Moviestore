@@ -45,6 +45,24 @@ public class MovieDataEntity: Mappable  {
         self.release_date = release_date
     }
     
+    init(movieEntity: MovieEntity) {
+        self.vote_average = movieEntity.vote_average
+        self.vote_count = Int(movieEntity.vote_count)
+        self.id = Int(movieEntity.id)
+        self.video = movieEntity.video
+        self.media_type = movieEntity.media_type
+        self.title = movieEntity.title
+        self.popularity = movieEntity.popularity
+        self.poster_path = movieEntity.poster_path
+        self.original_language = movieEntity.original_language
+        self.original_title = movieEntity.original_title
+        self.genre_ids = movieEntity.genre_ids
+        self.backdrop_path = movieEntity.backdrop_path
+        self.adult = movieEntity.adult
+        self.overview = movieEntity.overview
+        self.release_date = movieEntity.release_date
+    }
+    
     required public init?(map: Map) {
     }
     

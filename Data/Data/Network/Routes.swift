@@ -19,7 +19,7 @@ enum Routes{
         
         switch self {
         case .getList:
-            return serverHost + "/movie/now_playing?api_key=d3a6d72084969948e3a31970e4ee49b6&page=1"
+            return serverHost + "/movie/now_playing?api_key=d3a6d72084969948e3a31970e4ee49b6&page="
             
         case .getGenres:
             return serverHost + "/genre/movie/list?api_key=d3a6d72084969948e3a31970e4ee49b6&language=en-US"

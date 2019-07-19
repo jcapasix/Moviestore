@@ -18,6 +18,10 @@ public class GenreDataEntity: Mappable  {
         self.id = id
         self.name = name
     }
+    init(genreEntity: GenreEntity) {
+        self.id = Int(genreEntity.id)
+        self.name = genreEntity.name
+    }
     
     required public init?(map: Map) {
     }

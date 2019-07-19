@@ -13,12 +13,13 @@ public class HomeLocalRepository: HomeRepositoryProtocol {
     public static let sharedInstance = HomeLocalRepository()
     
     public func getList(list_id: Int, page: Int, completion: @escaping ([MovieDataEntity]?, NSError?) -> Void) {
-        
+        completion(CoreDateManager.shared.getMovieDataEntities(), nil)
     }
     
     public func getGenres(completion: @escaping ([GenreDataEntity]?, NSError?) -> Void) {
-        
+        completion(CoreDateManager.shared.getGenreDataEntities(), nil)
     }
+
 }
 
 

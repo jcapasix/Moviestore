@@ -8,6 +8,7 @@
 
 import Foundation
 import Domain
+import SVProgressHUD
 
 class LoginPresenter{
     
@@ -32,8 +33,9 @@ extension LoginPresenter: HomePresenterProtocol{
     }
     
     func getList(list_id: Int, page: Int) {
-        
+        SVProgressHUD.show()
         self.interactor.getList(list_id: list_id, page: page) { (movies, error) in
+            SVProgressHUD.dismiss()
             self.view?.showMovies(movies: Movie.transform(movieDomainEntities: movies)!)
         }
     }
