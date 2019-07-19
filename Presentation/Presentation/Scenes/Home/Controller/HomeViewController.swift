@@ -19,6 +19,7 @@ class HomeViewController: UIViewController, HomeViewProtocol {
     private var movies:[Movie] = []
     
     var currentPage = 1
+    var shownIndexes : [IndexPath] = []
     
     private var filterMovies:[Movie] = [Movie]()  {
         didSet{
@@ -135,9 +136,15 @@ extension HomeViewController : UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-//        if (indexPath.row == self.genres.count - 1) {
-//            self.presenter.getList(list_id: 1, page: currentPage + 1)
-//        }
+        
+        if (indexPath.row <= 8){
+            if (shownIndexes.contains(indexPath) == false) {
+                shownIndexes.append(indexPath)
+                let animation = AnimationFactory.makeSlideIn(duration: 0.5, delayFactor: 0.05)
+                let animator = Animator(animation: animation)
+                animator.animate(cell: cell, at: indexPath, in: collectionView)
+            }
+        }
     }
 
 }

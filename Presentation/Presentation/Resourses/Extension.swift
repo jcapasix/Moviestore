@@ -53,6 +53,15 @@ extension UIColor {
                             blue: CGFloat(rgb & 0x0000FF)/255,
                             alpha: 1.0)
     }
-    
+}
+
+extension UICollectionView {
+    func isLastVisibleCell(at indexPath: IndexPath) -> Bool {
+        guard let lastIndexPath = indexPathsForVisibleItems.last else {
+            return false
+        }
+        
+        return lastIndexPath == indexPath
+    }
 }
 
