@@ -29,4 +29,4 @@ Moviestore
   Este principio establece que cada módulo, clase o método debe tener responsabilidad sobre una sola parte de la funcionalidad  en el software, y ésta a su vez debería estar encapsulada.
 
 2. Qué características tiene, según su opinión, un “buen” código o código limpio
-  Que el código sea fácil de entender y sea escalable  en el tiempo.
+  Que el código sea fácil de entender, mantener y escalable en el tiempo.
